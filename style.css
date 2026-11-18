@@ -10,7 +10,7 @@ body {
 
 #content {
     background-color: lightgrey;
-    max-width: max-content;
+    width: max-content;
     margin: 0px auto;
     text-align: center;
     height: 100vh;
@@ -24,20 +24,32 @@ body {
 }
 
 #date {
-    font-size: 3rem;
+    font-size: 5rem;
+    margin-top: 15vh;
 }
 
 #time {
-    font-size: 4rem;
+    font-size: 8rem;
+    margin-top: 5vh;
 }
 
 #search {
     background-color: white;
     border-radius: 15px;
     padding: 5px;
+    margin-top: 20vh;
 
     & * {
         font-size: 1.5rem;
+    }
+
+    /*& select {
+    }*/
+
+    & input {
+        margin-left: 0;
+        min-width: 28rem;
+        width: 40vw;
     }
 
     & button {
