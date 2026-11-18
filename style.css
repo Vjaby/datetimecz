@@ -5,6 +5,7 @@
 body {
     background-color: gray;
     margin: 0px;
+    overflow: hidden;
 }
 
 #content {
