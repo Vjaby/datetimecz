@@ -16,6 +16,12 @@ body {
     padding: 5vh;
 }
 
+.no-default {
+    border: none;
+    outline: none;
+    background: 0 0;
+}
+
 #date {
     font-size: 3rem;
 }
@@ -25,5 +31,21 @@ body {
 }
 
 #search {
+    background-color: white;
+    border-radius: 15px;
+    padding: 5px;
+}
 
+#search *{
+    font-size: 1.5rem;
+}
+
+#search button{
+    width: 2rem;
+    height: 2rem;
+}
+
+#search-img {
+    height: 1.2rem;
+    width: 1.3rem;
 }
