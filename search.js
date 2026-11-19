@@ -14,6 +14,7 @@ async function getJson(path) {
 
 document.addEventListener("DOMContentLoaded", onDomLoad);
 async function onDomLoad() {
+    let engines_promise = getJson("./engines.json")
     search_select = document.getElementById("search-select");
     search_button = document.getElementById("search-button");
     search_input = document.getElementById("search-input");
@@ -25,13 +26,24 @@ async function onDomLoad() {
         }
     };
 
-    engines = await getJson("./engines.json")
+    engines = await engines_promise;
+
+    search_select.innerHTML = "";
+    for (var key of Object.keys(engines)) {
+        let new_option = document.createElement("option");
+        new_option.value = key;
+        new_option.text = engines[key]["name"];
+        search_select.add(new_option);
+    }
 }
 
 
 async function onSearchButtonClicked() {
     let search_text = search_input.value;
-    let search_engine = engines[search_select.value];
+    search_text = search_text.trim()
+    if (search_text.length == 0) return;
+
+    let search_engine = engines[search_select.value]["srch"];
     let link = search_engine.format(search_text)
     window.location.href = link;
 }

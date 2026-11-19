@@ -1,4 +1,16 @@
 {
-    "ddg" : "https://duckduckgo.com/?q={0}",
-    "google" : "https://www.google.com/search?q={0}"
+    "ddg" : {
+        "name" : "DDG",
+        "srch" : "https://duckduckgo.com/?q={0}"
+    },
+
+    "seznam" : {
+        "name" : "Seznam",
+        "srch" : "https://search.seznam.cz/?q={0}"
+    },
+
+        "google" : {
+        "name" : "Google",
+        "srch" : "https://www.google.com/search?q={0}"
+    }
 }
