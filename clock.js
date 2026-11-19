@@ -1,38 +1,11 @@
-let date_format = "{0}-{1}-{2}"
-let time_format = "{0}:{1}:{2}"
+let date_format = "{0}-{1}-{2}";
+let time_format = "{0}:{1}:{2}";
 
-let search_select;
-let search_button;
-let search_input;
-
-let engines;
-
-// https://www.geeksforgeeks.org/javascript/read-json-file-using-javascript/
-async function getJson(path) {
-    const response = await fetch(path);
-    const res = await response.json();
-    return res;
-}
+let interval_id = 0;
 
 document.addEventListener("DOMContentLoaded", onDomLoad);
-async function onDomLoad() {
-    let interval_id = setInterval(update, 100);
-
-    search_select = document.getElementById("search-select");
-    search_button = document.getElementById("search-button");
-    search_input = document.getElementById("search-input");
-
-    search_button.addEventListener("click", onSearchButtonClicked);
-
-    engines = await getJson("./engines.json")
-}
-
-
-async function onSearchButtonClicked() {
-    let search_text = search_input.value;
-    let search_engine = engines[search_select.value];
-    let link = search_engine.format(search_text)
-    window.location.href = link;
+function onDomLoad() {
+    interval_id = setInterval(update, 1000);
 }
 
 
