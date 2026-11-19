@@ -16,10 +16,12 @@
         <div id="date">YYYY-MM-DD</div>
         <div id="time">hh:mm:ss</div>
         <div id="search">
-            <select class="no-default">
+            <select id="search-select" class="no-default">
+                <option value="ddg">DDG</option>
+                <option value="google">Google</option>
             </select>
-            <input class="no-default" type="text" placeholder="Search...">
-            <button class="no-default" type="submit"><img id="search-img" src="images/mag.png" alt="search icon"></button>
+            <input id="search-input" class="no-default" type="text" placeholder="Search...">
+            <button id="search-button" class="no-default" type="button"><img id="search-img" src="images/mag.png" alt="search icon"></button>
         </div>
     </div>
 </body>

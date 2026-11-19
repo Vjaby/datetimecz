@@ -1,0 +1,4 @@
+{
+    "ddg" : "https://duckduckgo.com/?q={0}",
+    "google" : "https://www.google.com/search?q={0}"
+}
