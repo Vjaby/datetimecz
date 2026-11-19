@@ -3,6 +3,7 @@
     --search-bg-color: whitesmoke;
     --content-bg-color: transparent;
     --body-bg-color: #222020;
+    --button-bg-color: rgba(255, 0, 0, 0.2);
 }
 
 
@@ -65,6 +66,12 @@ body {
     & button {
         width: 2rem;
         height: 2rem;
+        border-radius: 100vw; /*circle*/
+        background-color: transparent;
+    }
+
+    & button:hover {
+        background-color: #22202020;
     }
 
     & #search-img {
