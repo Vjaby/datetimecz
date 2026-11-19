@@ -14,17 +14,31 @@
     <script src="clock.js"></script>
     <script src="search.js"></script>
     <div id="content">
-        <div id="date">YYYY-MM-DD</div>
-        <div id="time">hh:mm:ss</div>
-        <div id="search">
+
+        <div>
+            <button id="date-button" class="no-default copy-button" title="Zkopírovat datum">
+                <div id="date">YYYY-MM-DD</div>
+            </button>
+        </div>
+
+        <div>
+            <button id="time-button" class="no-default copy-button" title="Zkopírovat čas">
+                <div id="time">hh:mm:ss</div>
+            </button>
+        </div>
+
+        <search id="search">
             <select id="search-select" class="no-default">
                 <option value="ddg">DDG</option>
                 <option value="google">Google</option>
                 <option value="seznam">Seznam</option>
             </select>
-            <input id="search-input" class="no-default" type="text" placeholder="Search...">
-            <button id="search-button" class="no-default" type="button"><img id="search-img" src="images/mag.png" alt="search icon"></button>
-        </div>
+            <input id="search-input" class="no-default" type="text" placeholder="Vyhledat...">
+            <button id="search-button" class="no-default" type="button">
+                <img id="search-img" src="images/mag.png" alt="search icon">
+            </button>
+        </search>
+
     </div>
 </body>
 

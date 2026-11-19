@@ -3,7 +3,7 @@
     --search-bg-color: whitesmoke;
     --content-bg-color: transparent;
     --body-bg-color: #222020;
-    --button-bg-color: rgba(255, 0, 0, 0.2);
+    --button-bg-color: #a0101020;
 }
 
 
@@ -32,15 +32,32 @@ body {
     background: 0 0;
 }
 
+.copy-button {
+    padding: 0rem 2rem;
+    border-radius: 1rem;
+
+    &:hover {
+        background-color: var(--button-bg-color);
+    }
+}
+
+
+#date-button {
+    margin-top: 5vh;
+}
+
 #date {
     font-size: 5rem;
-    margin-top: 15vh;
     color: var(--datetime-color);
+}
+
+
+#time-button {
+    margin-top: 5vh;
 }
 
 #time {
     font-size: 8rem;
-    margin-top: 5vh;
     color: var(--datetime-color);
 }
 
@@ -50,14 +67,8 @@ body {
     padding: 5px;
     margin-top: 20vh;
 
-    & * {
-        font-size: 1.5rem;
-    }
-
-    /*& select {
-    }*/
-
     & input {
+        font-size: 1.5rem;
         margin-left: 0;
         min-width: 28rem;
         width: 40vw;
@@ -71,11 +82,21 @@ body {
     }
 
     & button:hover {
-        background-color: #22202020;
+        background-color: var(--button-bg-color);
     }
 
     & #search-img {
         height: 1.2rem;
         width: 1.3rem;
+    }
+
+    & select {
+        font-size: 1.2rem;
+        padding: 0.3rem 0.2rem 0.3rem 0.2rem ;
+        border-radius: 0.5rem;
+        background-color: rgba(from var(--body-bg-color) r g b / 0.2);
+        & option {
+            font-size: 1rem;
+        }
     }
 }
