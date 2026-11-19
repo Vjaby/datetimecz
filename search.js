@@ -19,6 +19,11 @@ async function onDomLoad() {
     search_input = document.getElementById("search-input");
 
     search_button.addEventListener("click", onSearchButtonClicked);
+    search_input.onkeydown = function (event) {
+        if (event.key == "Enter") {
+            onSearchButtonClicked();
+        }
+    };
 
     engines = await getJson("./engines.json")
 }
