@@ -4,6 +4,14 @@
     --content-bg-color: transparent;
     --body-bg-color: #222020;
     --button-bg-color: #a0101020;
+
+    --settings-color: whitesmoke;
+    --settings-bg-color: #333030;
+    --settings-button-color: whitesmoke;
+    --settings-button-bg-color: #ffffff20;
+    --format-input-bg-color: whitesmoke;
+    --format-button-color: whitesmoke;
+    --format-button-bg-color: #ffffff30;
 }
 
 
@@ -92,11 +100,50 @@ body {
 
     & select {
         font-size: 1.2rem;
-        padding: 0.3rem 0.2rem 0.3rem 0.2rem ;
+        padding: 0.3rem 0.2rem 0.3rem 0.2rem;
         border-radius: 0.5rem;
         background-color: rgba(from var(--body-bg-color) r g b / 0.2);
+
         & option {
             font-size: 1rem;
         }
     }
+}
+
+#settings {
+    background-color: var(--settings-bg-color);
+    color: var(--settings-color);
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    display: none;  /* changed with js */
+    padding: 50px 10px;
+}
+
+.format-form {
+    color: var(--format-input-bg-color);
+
+    & input {
+        background-color: var(--format-input-bg-color);
+        border-radius: 5px;
+        height: 1.5rem;
+        margin-top: 5px;
+        margin-right: 5px;
+    }
+
+    & button {
+        color: var(--format-button-color);
+        background-color: var(--format-button-bg-color);
+        border-radius: 5px;
+        height: 1.5rem;
+    }
+}
+
+.settings-button {
+    color: var(--settings-button-color);
+    background-color: var(--settings-button-bg-color);
+    position: absolute;
+    right: 10px;
+    top: 10px;
 }

@@ -15,15 +15,39 @@ function onDomLoad() {
     update()
     interval_id = setInterval(update, 1000);
 
-    let dBtn = document.getElementById("date-button");
-    dBtn.addEventListener("click", function () {
+    let dateBtn = document.getElementById("date-button");
+    dateBtn.addEventListener("click", function () {
         copyToClipboard(dateDiv);
-    })
+    });
 
-    let tBtn = document.getElementById("time-button");
-    tBtn.addEventListener("click", function () {
+    let timeBtn = document.getElementById("time-button");
+    timeBtn.addEventListener("click", function () {
         copyToClipboard(timeDiv);
-    })
+    });
+
+    let settings = document.getElementById("settings");
+
+    let showSettingsBtn = document.getElementById("show-settings-button");
+    showSettingsBtn.addEventListener("click", function () {
+        settings.style.display = "block";
+    });
+
+    let hideSettingsBtn = document.getElementById("hide-settings-button");
+    hideSettingsBtn.addEventListener("click", function () {
+        settings.style.display = "none";
+    });
+
+    let dateFormatBtn = document.getElementById("date-format-button");
+    dateFormatBtn.addEventListener("click", function () {
+        let newFormat = document.getElementById("date-format-input").value;
+        date_format = newFormat;
+    });
+
+    let timeFormatBtn = document.getElementById("time-format-button");
+    timeFormatBtn.addEventListener("click", function () {
+        let newFormat = document.getElementById("time-format-input").value;
+        time_format = newFormat;
+    });
 }
 
 
