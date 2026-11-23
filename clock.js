@@ -28,16 +28,14 @@ function onDomLoad() {
     update();
     interval_id = setInterval(update, 1000);
 
+    // copy buttons
     let dateBtn = document.getElementById("date-button");
-    dateBtn.addEventListener("click", function () {
-        copyToClipboard(dateDiv);
-    });
+    dateBtn.addEventListener("click", copyToClipboard.bind(dateDiv));
 
     let timeBtn = document.getElementById("time-button");
-    timeBtn.addEventListener("click", function () {
-        copyToClipboard(timeDiv);
-    });
+    timeBtn.addEventListener("click", copyToClipboard.bind(null, timeDiv));
 
+    // settings setup
     let settings = document.getElementById("settings");
 
     let showSettingsBtn = document.getElementById("show-settings-button");
@@ -50,6 +48,7 @@ function onDomLoad() {
         settings.style.display = "none";
     });
 
+    // set formats
     let dateFormatBtn = document.getElementById("date-format-button");
     dateFormatBtn.addEventListener("click", function () {
         let newFormat = document.getElementById("date-format-input").value;
@@ -61,6 +60,14 @@ function onDomLoad() {
         let newFormat = document.getElementById("time-format-input").value;
         setFormat("time", newFormat, true);
     });
+
+    // reset formats
+    let dateResetBtn = document.getElementById("date-format-reset-button");
+    dateResetBtn.addEventListener("click", setFormat.bind(null, "date", defaultDateFormat, true));
+
+    let timeResetBtn = document.getElementById("time-format-reset-button");
+    timeResetBtn.addEventListener("click", setFormat.bind(null, "time", defaultTimeFormat, true));
+
 }
 
 

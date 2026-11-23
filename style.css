@@ -138,6 +138,14 @@ body {
         border-radius: 5px;
         height: 1.5rem;
     }
+
+    & #time-format-reset-button {
+        margin-left: 1rem;
+    }
+
+    & #date-format-reset-button {
+        margin-left: 1rem;
+    }
 }
 
 .settings-button {
