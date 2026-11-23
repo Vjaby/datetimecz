@@ -1,8 +1,10 @@
 let defaultDateFormat = "{0}-{1}-{2}";
 let defaultTimeFormat = "{0}:{1}:{2}";
 
-let dateFormat = "";
-let timeFormat = "";
+let formats = {
+    "time" : "",
+    "date" : ""
+};
 
 let interval_id = 0;
 
@@ -16,12 +18,12 @@ function onDomLoad() {
     timeDiv = document.getElementById("time");
 
     let dF = localStorage.getItem("dateFormat");
-    dateFormat = dF !== null ? dF : defaultDateFormat;
-    document.getElementById("date-format-input").setAttribute("placeholder", dateFormat);
+    dF = dF !== null ? dF : defaultDateFormat;
+    setFormat("date", dF, false);
 
     let tF = localStorage.getItem("timeFormat");
-    timeFormat = tF !== null ? tF : defaultTimeFormat;
-    document.getElementById("time-format-input").setAttribute("placeholder", timeFormat);
+    tF = tF !== null ? tF : defaultTimeFormat;
+    setFormat("time", tF, false);
 
     update();
     interval_id = setInterval(update, 1000);
@@ -51,29 +53,36 @@ function onDomLoad() {
     let dateFormatBtn = document.getElementById("date-format-button");
     dateFormatBtn.addEventListener("click", function () {
         let newFormat = document.getElementById("date-format-input").value;
-        dateFormat = newFormat;
-        localStorage.setItem("dateFormat", newFormat);
-        document.getElementById("date-format-input").setAttribute("placeholder", dateFormat);
+        setFormat("date", newFormat, true);
     });
 
     let timeFormatBtn = document.getElementById("time-format-button");
     timeFormatBtn.addEventListener("click", function () {
         let newFormat = document.getElementById("time-format-input").value;
-        timeFormat = newFormat;
-        localStorage.setItem("timeFormat", newFormat);
-        document.getElementById("time-format-input").setAttribute("placeholder", timeFormat);
+        setFormat("time", newFormat, true);
     });
+}
+
+
+// name = "date" | "time"
+function setFormat(name, newFormat, save) {
+    if (!Object.keys(formats).includes(name)) return;
+
+    formats[name] = newFormat;
+    document.getElementById(name + "-format-input").setAttribute("placeholder", newFormat);
+
+    if (save) localStorage.setItem(name + "Format", newFormat);
 }
 
 
 function update() {
     let d = new Date();
 
-    timeDiv.innerHTML = timeFormat.formatWithPadding(
+    timeDiv.innerHTML = formats["time"].formatWithPadding(
         d.getHours(), d.getMinutes(), d.getSeconds()
     );
 
-    dateDiv.innerHTML = dateFormat.formatWithPadding(
+    dateDiv.innerHTML = formats["date"].formatWithPadding(
         d.getFullYear(), d.getMonth() + 1, d.getDate()
     );
     // getMonth() -> (0 - 11)
