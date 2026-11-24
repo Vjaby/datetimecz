@@ -72,8 +72,11 @@ body {
 #search {
     background-color: var(--search-bg-color);
     border-radius: 15px;
-    padding: 5px;
+    padding: 5px 15px 5px 5px;
     margin-top: 20vh;
+    display: flex;
+    align-items: center;
+    align-content: center;
 
     & input {
         font-size: 1.5rem;
@@ -94,8 +97,8 @@ body {
     }
 
     & #search-img {
-        height: 1.2rem;
-        width: 1.3rem;
+        height: 2rem;
+        width: 2rem;
     }
 
     & select {
